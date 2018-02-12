@@ -1,0 +1,35 @@
+<div>
+<h4>Raviteja Mallem</h4>
+<h4>1001417621</h4>
+<form action="/upload" method="post" enctype="multipart/form-data" >
+     <h4>Upload Imagee</h4>
+      <input type="file" name="file"><br>
+      <input type="text" name="title"><br>
+     <input type="submit" name="submit">
+ </form>
+    <form action="/disp" method="post"  >
+     <h4>disp Image</h4>
+      <input type="text" name="iname"><br>
+     <input type="submit" name="submit">
+ </form>
+</div>
+<div>
+    <img src="{{ user_image }}" alt="User Image">
+</div>
+<div>
+    <form action="/dispall" method="post"  >
+     <h4>disp all images</h4>
+     <input type="submit" name="submit">
+</div>
+<div>
+
+    <table border="1" cellpadding="5" cellspacing="5">
+    {% for row in data %}
+        <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
